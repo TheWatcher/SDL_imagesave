@@ -38,9 +38,9 @@ that allow SDL Surfaces to be saved as JPEG and PNG data to either RWops or file
 Getting started
 ---------------
 
-In order to use the save functions, you will need to include IMG\_savejpg.h if you want to
-write images as JPEG files, IMG\_savepng.h if you want to write PNG files, or you can just
-include IMG\_save.h if you want to save as both in different places in your code. Once you
+In order to use the save functions, you will need to include `IMG_savejpg.h` if you want to
+write images as JPEG files, IMG_savepng.h if you want to write PNG files, or you can just
+include `IMG_save.h` if you want to save as both in different places in your code. Once you
 have done this, you will need to make sure that the .c files are being compiled and linked
 with your application. In theory you shouldn't need to explicitly link the jpeg and png
 libraries if you are linking SDL_image already.
@@ -50,14 +50,14 @@ Saving a SDL_Surface as JPEG
 ----------------------------
 
 There are two options available when saving a surface as a jpeg: you may either use the
-IMG\_SaveJPG() function to save the surface to a jpeg file, or IMG\_SavePNG\_RW() to save
-the surface as jpeg data to a RWops data source. The prototypes of the two functions are
+`IMG_SaveJPG()` function to save the surface to a jpeg file, or `IMG_SavePNG_RW()` to save
+the surface as jpeg data to a `SDL_RWops` data source. The prototypes of the two functions are
 very similar:
 
-    int IMG\_SaveJPG(const char *filename, SDL\_Surface *surf, int quality);
-    int IMG\_SaveJPG\_RW(SDL\_RWops *dest, SDL\_Surface *surf, int quality);
+    int IMG_SaveJPG(const char *filename, SDL_Surface *surf, int quality);
+    int IMG_SaveJPG_RW(SDL_RWops *dest, SDL_Surface *surf, int quality);
 
-The functions will save the specified surface to either the named file, or the RWops,
+The functions will save the specified surface to either the named file, or the `SDL_RWops`,
 at the quality specified. 'quality' should be in the range 0 to 100, with higher values
 producing larger but less lossy images.
 
@@ -70,20 +70,20 @@ code, and the surface you pass in will not be modified.
 Saving a SDL_Surface as PNG
 ---------------------------
 
-As with JPEG saving, you may either use IMG\_SavePNG() to save a surface to a png file, or
-IMG\_SavePNG\_RW() to save the surface as png data to a RWops data source. The prototypes
+As with JPEG saving, you may either use `IMG_SavePNG()` to save a surface to a png file, or
+`IMG_SavePNG_RW()` to save the surface as png data to a `SDL_RWops` data source. The prototypes
 should look familiar:
 
-    int IMG\_SavePNG(const char *filename, SDL\_Surface *surf, int compression);
-    int IMG\_SavePNG\_RW(SDL\_RWops *dest, SDL\_Surface *surf, int compression);
+    int IMG_SavePNG(const char *filename, SDL_Surface *surf, int compression);
+    int IMG_SavePNG_RW(SDL_RWops *dest, SDL_Surface *surf, int compression);
 
 The functions will save the specified surface to either the named file, or the RWops
-at the specified compression level. 'compression' should be in the range 0 to 9, or -1 if
+at the specified compression level. `compression` should be in the range 0 to 9, or -1 if
 you want to use zlib's default compression level. If you include zlib.h you can use the
-constants Z\_NO\_COMPRESSION, Z\_BEST\_SPEED, Z\_BEST\_COMPRESSION, or Z\_DEFAULT\_COMPRESSION
+constants `Z_NO_COMPRESSION`, `Z_BEST_SPEED`, `Z_BEST_COMPRESSION`, or `Z_DEFAULT_COMPRESSION`
 if you prefer.
 
 The PNG save code supports palettised surfaces, and will save the transparency
-information for the surface if SDL_SRCCOLORKEY is set and the image is palettised.
+information for the surface if `SDL_SRCCOLORKEY` is set and the image is palettised.
 True colour images with alpha channels are supported, but colour transparency via
 colorkey is not currently supported.
