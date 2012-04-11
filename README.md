@@ -54,8 +54,8 @@ IMG\_SaveJPG() function to save the surface to a jpeg file, or IMG\_SavePNG\_RW(
 the surface as jpeg data to a RWops data source. The prototypes of the two functions are
 very similar:
 
-int IMG\_SaveJPG(const char *filename, SDL\_Surface *surf, int quality);
-int IMG\_SaveJPG\_RW(SDL\_RWops *dest, SDL\_Surface *surf, int quality);
+    int IMG\_SaveJPG(const char *filename, SDL\_Surface *surf, int quality);
+    int IMG\_SaveJPG\_RW(SDL\_RWops *dest, SDL\_Surface *surf, int quality);
 
 The functions will save the specified surface to either the named file, or the RWops,
 at the quality specified. 'quality' should be in the range 0 to 100, with higher values
@@ -74,8 +74,8 @@ As with JPEG saving, you may either use IMG\_SavePNG() to save a surface to a pn
 IMG\_SavePNG\_RW() to save the surface as png data to a RWops data source. The prototypes
 should look familiar:
 
-int IMG\_SavePNG(const char *filename, SDL\_Surface *surf, int compression);
-int IMG\_SavePNG\_RW(SDL\_RWops *dest, SDL\_Surface *surf, int compression);
+    int IMG\_SavePNG(const char *filename, SDL\_Surface *surf, int compression);
+    int IMG\_SavePNG\_RW(SDL\_RWops *dest, SDL\_Surface *surf, int compression);
 
 The functions will save the specified surface to either the named file, or the RWops
 at the specified compression level. 'compression' should be in the range 0 to 9, or -1 if
