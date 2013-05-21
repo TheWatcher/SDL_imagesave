@@ -50,7 +50,7 @@ Saving a SDL_Surface as JPEG
 ----------------------------
 
 There are two options available when saving a surface as a jpeg: you may either use the
-`IMG_SaveJPG()` function to save the surface to a jpeg file, or `IMG_SavePNG_RW()` to save
+`IMG_SaveJPG()` function to save the surface to a jpeg file, or `IMG_SaveJPG_RW()` to save
 the surface as jpeg data to a `SDL_RWops` data source. The prototypes of the two functions are
 very similar:
 
